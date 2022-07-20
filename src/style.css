@@ -1,12 +1,12 @@
 .main {
   font-family: "Gentium Basic", serif;
-  border: solid;
+  border: none;
   border-color: #3795d4;
   border-radius: 30px;
-  border-style: groove;
+  box-shadow: rgba(99, 99, 99, 0.7) 0px 15px 15px 0px;
   border-width: 5px;
   background-color: rgb(255, 255, 255, 0.9);
-  margin: 10px 0;
+  margin: 20px 0;
   padding: 20px;
 }
 
