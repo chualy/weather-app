@@ -5,8 +5,7 @@
   border-radius: 30px;
   border-style: groove;
   border-width: 5px;
-  background-color: white;
-  opacity: 0.9;
+  background-color: rgb(255, 255, 255, 0.9);
   margin: 10px 0;
   padding: 20px;
 }
@@ -21,22 +20,19 @@ h1 {
   font-weight: 900;
   font-size: 54px;
   text-align: center;
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
 }
 
 h2 {
   font-weight: 700;
   font-size: 36px;
-  margin: 15px;
-  padding: 10px;
+  margin: 10px;
   text-align: center;
 }
 
 h4 {
   font-weight: 600;
-  font-size: 22px;
-  margin: 15px;
+  font-size: 26px;
   padding: 10px;
   text-align: center;
 }
@@ -48,21 +44,41 @@ h3 {
   margin: 5px;
 }
 
-ul li {
+ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 10px;
 }
 
-img {
-  width: 150px;
+li strong {
+  font-size: 64px;
+}
+
+.temp-unit {
+  position: relative;
+  top: -20px;
+}
+.main-icon {
+  width: 120px;
   height: auto;
   display: block;
   margin: auto;
 }
-
-small {
+.weather-parameter {
+  margin-top: 30px;
+}
+p {
   color: white;
   display: block;
   text-align: center;
+}
+
+.code-link {
+  color: #003865;
+  text-decoration: none;
+}
+
+.code-link:hover {
+  color: white;
+  text-decoration: underline;
 }
