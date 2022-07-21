@@ -27,7 +27,7 @@
       <div class="main">
         <h1>Check Out the Weather</h1>
 
-        <h2>Singapore</h2>
+        <h2 id="city">Singapore</h2>
         <h4>
           Monday 3 Jan 2022 <br />
           09:03 am
@@ -42,7 +42,7 @@
                     <span class="temp-unit">°C | <a href="#">°F</a></span>
                   </h4>
                 </li>
-                <li><h3>Cloudy</h3></li>
+                <li><h3 id="description">Cloudy</h3></li>
               </ul>
             </div>
             <div class="col">
@@ -54,8 +54,12 @@
             </div>
             <div class="col">
               <ul class="weather-parameter">
-                <li><h5>Humidity: 80 %</h5></li>
-                <li><h5>Wind speed: 5 km/h</h5></li>
+                <li>
+                  <h5>Humidity: <span id="humidity">80</span> %</h5>
+                </li>
+                <li>
+                  <h5>Wind speed: <span id="wind">5</span> km/h</h5>
+                </li>
               </ul>
             </div>
           </div>
