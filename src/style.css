@@ -23,6 +23,19 @@ h1 {
   margin: 10px;
 }
 
+.search-box {
+  border-radius: 30px;
+  border-color: #3795d4;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.search-button {
+  border-radius: 30px;
+  background-color: #3795d4;
+  margin-left: 10px;
+}
+
 h2 {
   font-weight: 700;
   font-size: 36px;
@@ -77,12 +90,12 @@ p {
   text-align: center;
 }
 
-.code-link {
-  color: #003865;
+.link {
+  color: #ff9900;
   text-decoration: none;
 }
 
-.code-link:hover {
+.link:hover {
   color: white;
   text-decoration: underline;
 }

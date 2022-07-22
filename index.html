@@ -27,6 +27,29 @@
       <div class="main">
         <h1>Check Out the Weather</h1>
 
+        <form>
+          <div class="row">
+            <div class="col-9">
+              <div class="form-group">
+                <input
+                  type="search"
+                  class="form-control search-box"
+                  id="search-input"
+                  placeholder="Enter city to search"
+                  autofocus
+                />
+              </div>
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary search-button"
+              />
+            </div>
+          </div>
+        </form>
+
         <h2 id="city">Singapore</h2>
         <h4>Last updated: <span id="day-time">Monday 5:00</span></h4>
         <div class="container">
@@ -67,10 +90,11 @@
         <a
           href="https://github.com/chualy/weather-app"
           target="blank"
-          class="code-link"
+          class="link"
           >Open-source code</a
         >
-        by Yen
+        by Yen. Hosted on
+        <a href="https://netlify.com" target="blank" class="link">Netlify.</a>
       </p>
     </div>
 
