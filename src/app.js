@@ -45,11 +45,17 @@ function displayTemp(response) {
 
   let daytimeElement = document.querySelector("#day-time");
   daytimeElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `response.data.weather[0].description`);
 }
 
 let apiKey = "166b9c0e1c83778d358b7f11ac37349b";
 let unit = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Singapore&units=${unit}&appid=${apiKey}`;
-console.log(apiUrl);
 
 axios.get(apiUrl).then(displayTemp);
