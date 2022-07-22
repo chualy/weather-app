@@ -25,7 +25,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayTemp(response) {
+function showSearchCityResult(response) {
   console.log(response.data);
 
   let cityElement = document.querySelector("#city");
@@ -54,8 +54,17 @@ function displayTemp(response) {
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 }
 
-let apiKey = "166b9c0e1c83778d358b7f11ac37349b";
-let unit = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Singapore&units=${unit}&appid=${apiKey}`;
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  let citySearch = searchInput.value;
+  let apiKey = "166b9c0e1c83778d358b7f11ac37349b";
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=${unit}&appid=${apiKey}`;
 
-axios.get(apiUrl).then(displayTemp);
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showSearchCityResult);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", search);

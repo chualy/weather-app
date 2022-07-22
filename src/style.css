@@ -23,6 +23,9 @@ h1 {
   margin: 10px;
 }
 
+form {
+  margin: 20px;
+}
 .search-box {
   border-radius: 30px;
   border-color: #3795d4;
@@ -34,6 +37,7 @@ h1 {
   border-radius: 30px;
   background-color: #3795d4;
   margin-left: 10px;
+  padding: 10px 40px;
 }
 
 h2 {
