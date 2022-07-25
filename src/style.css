@@ -36,8 +36,10 @@ form {
 .search-button {
   border-radius: 30px;
   background-color: #3795d4;
-  margin-left: 10px;
-  padding: 10px 40px;
+  margin-left: 5px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  padding: 10px 20px;
 }
 
 h2 {
@@ -85,6 +87,7 @@ li strong {
   display: block;
   margin: auto;
 }
+
 .weather-parameter {
   margin-top: 30px;
 }
