@@ -26,8 +26,6 @@ function formatDate(timestamp) {
 }
 
 function showSearchCityResult(response) {
-  console.log(response.data);
-
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
 
@@ -64,7 +62,6 @@ function search(event) {
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=${unit}&appid=${apiKey}`;
 
-  console.log(apiUrl);
   axios.get(apiUrl).then(showSearchCityResult);
 }
 
@@ -72,12 +69,16 @@ function showFahrenheitTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp-number");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp-number");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
