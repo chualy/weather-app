@@ -54,15 +54,18 @@ function showSearchCityResult(response) {
   celsiusTemp = response.data.main.temp;
 }
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
-  let citySearch = searchInput.value;
+function search(city) {
   let apiKey = "166b9c0e1c83778d358b7f11ac37349b";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=${unit}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(showSearchCityResult);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  search(searchInput.value);
 }
 
 function showFahrenheitTemp(event) {
@@ -83,7 +86,7 @@ function showCelsiusTemp(event) {
 }
 
 let form = document.querySelector("form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemp);
@@ -92,3 +95,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemp = null;
+
+search("Singapore");
