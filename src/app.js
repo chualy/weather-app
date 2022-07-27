@@ -39,7 +39,8 @@ function showSearchCityResult(response) {
   humidityElement.innerHTML = response.data.main.humidity;
 
   let windElement = document.querySelector("#wind");
-  windElement = ((`(response.data.wind.speed)` * 60 * 60) / 1000).toFixed(1);
+  let windSpeed = response.data.wind.speed;
+  windElement.innerHTML = ((`${windSpeed}` * 60 * 60) / 1000).toFixed(1);
 
   let daytimeElement = document.querySelector("#day-time");
   daytimeElement.innerHTML = formatDate(response.data.dt * 1000);
