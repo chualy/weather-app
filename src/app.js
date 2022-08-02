@@ -88,6 +88,36 @@ function showCelsiusTemp(event) {
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col=2">
+        <div class="forecast-indiv">
+          <h5 class="forecast-day">${day}</h5>
+          <img
+            src="https://openweathermap.org/img/wn/02d@2x.png"
+            alt="clouds"
+            width="70%"
+          />
+          <h5 class="forecast-temp">
+            <span class="forecast-temp-max">30°</span> <br />
+            <span class="forecast-temp-min">22°</span>
+          </h5>
+        </div>
+      </div> 
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
@@ -100,3 +130,4 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 let celsiusTemp = null;
 
 search("Singapore");
+displayForecast();
