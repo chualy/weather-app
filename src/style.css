@@ -60,6 +60,10 @@ h2 {
   text-align: center;
 }
 
+.static-text {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 h4 {
   font-weight: 600;
   font-size: 24px;
