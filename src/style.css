@@ -5,7 +5,7 @@
   border-radius: 30px;
   box-shadow: rgba(99, 99, 99, 0.7) 0px 15px 15px 0px;
   border-width: 5px;
-  background-color: rgb(255, 255, 255, 0.9);
+  background: linear-gradient(#f3e7e9, #abcdef, #d7f5ff);
   margin: 20px 0;
   padding: 20px;
 }
@@ -17,6 +17,7 @@ body {
 
 h1 {
   color: #3795d4;
+  text-shadow: 1px 1px gray;
   font-weight: 900;
   font-size: 54px;
   text-align: center;
@@ -51,18 +52,22 @@ h2 {
 
 h4 {
   font-weight: 600;
-  font-size: 26px;
+  font-size: 24px;
   padding: 10px;
   text-align: center;
 }
 
 h3 {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 26px;
   text-align: center;
   margin: 5px;
 }
 
+h5 {
+  font-weight: 500;
+  font-size: 20px;
+}
 ul {
   list-style: none;
   margin: 10px;
@@ -91,6 +96,32 @@ li strong {
 .weather-parameter {
   margin-top: 30px;
 }
+
+.weather-forecast {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.forecast-indiv {
+  margin: 10px;
+  padding: 10px;
+}
+
+.forecast-day {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.forecast-temp-max {
+  font-weight: bold;
+}
+
+.forecast-temp-min {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 p {
   color: white;
   display: block;
