@@ -51,6 +51,9 @@ function showSearchCityResult(response) {
   let cityTemp = document.querySelector("#temp-number");
   cityTemp.innerHTML = Math.round(response.data.main.temp);
 
+  let feelsLikeTemp = document.querySelector("#feelslike-temp-number");
+  feelsLikeTemp.innerHTML = Math.round(response.data.main.feels_like);
+
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
 
