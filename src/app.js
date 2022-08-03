@@ -53,6 +53,18 @@ function showSearchCityResult(response) {
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
   celsiusTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "166b9c0e1c83778d358b7f11ac37349b";
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${unit}&appid=${apiKey}`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function search(city) {
@@ -88,7 +100,8 @@ function showCelsiusTemp(event) {
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row d-flex justify-content-center">`;
@@ -130,4 +143,3 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 let celsiusTemp = null;
 
 search("Singapore");
-displayForecast();
