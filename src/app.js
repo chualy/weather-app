@@ -1,12 +1,12 @@
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
+  let now = new Date(timestamp);
 
-  let hours = date.getHours();
+  let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
 
-  let minutes = date.getMinutes();
+  let minutes = now.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -20,9 +20,28 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
+  let day = days[now.getDay()];
 
-  return `${day} ${hours}:${minutes}`;
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let month = months[now.getMonth()];
+  let dayOfMonth = now.getDate();
+  let year = now.getFullYear();
+
+  return `${dayOfMonth} ${month} ${year}, ${day} <br> ${hours}:${minutes}`;
 }
 
 function showSearchCityResult(response) {

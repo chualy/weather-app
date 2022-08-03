@@ -52,7 +52,7 @@
 
         <h2 id="city">Singapore</h2>
         <h4>
-          <span class="static-text">Last updated: </span
+          <span class="static-text">Last updated:<br /> </span
           ><span id="day-time">Monday 5:00</span>
         </h4>
         <div class="container">
@@ -60,24 +60,31 @@
             <div class="col">
               <ul>
                 <li>
-                  <h4>
+                  <h3>
                     <strong id="temp-number">26</strong>
                     <span class="temp-unit"
                       ><a href="#" id="celsius-link" class="active">°C</a> |
                       <a href="#" id="fahrenheit-link">°F</a></span
                     >
-                  </h4>
+                  </h3>
                 </li>
-                <li><h3 id="description">Cloudy</h3></li>
+                <li>
+                  <h5><span class="static-text">Feels like:</span></h5>
+                </li>
               </ul>
             </div>
             <div class="col main-icon-div d-flex justify-content-center">
-              <img
-                src="https://openweathermap.org/img/wn/02d@2x.png"
-                alt="clouds"
-                class="main-icon"
-                id="icon"
-              />
+              <ul>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/02d@2x.png"
+                    alt="clouds"
+                    class="main-icon"
+                    id="icon"
+                  />
+                </li>
+                <li><h3 id="description">Cloudy</h3></li>
+              </ul>
             </div>
             <div class="col">
               <ul class="weather-parameter">
