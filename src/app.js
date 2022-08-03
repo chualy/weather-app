@@ -40,7 +40,7 @@ function showSearchCityResult(response) {
 
   let windElement = document.querySelector("#wind");
   let windSpeed = response.data.wind.speed;
-  windElement.innerHTML = ((`${windSpeed}` * 60 * 60) / 1000).toFixed(1);
+  windElement.innerHTML = Math.round((`${windSpeed}` * 60 * 60) / 1000);
 
   let daytimeElement = document.querySelector("#day-time");
   daytimeElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -91,7 +91,7 @@ function showCelsiusTemp(event) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row d-flex justify-content-center">`;
   let days = ["Thurs", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
     forecastHTML =
