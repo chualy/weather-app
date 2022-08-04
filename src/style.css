@@ -31,7 +31,7 @@ form {
   border-radius: 30px;
   border: solid;
   border-width: 2px;
-  border-color: #d47e37;
+  border-color: #d45f37;
   box-shadow: rgba(99, 99, 99, 0.3) 0px 1px 1px 0px;
   margin-bottom: 30px;
   margin-left: 20px;
@@ -40,8 +40,8 @@ form {
 
 .search-button {
   border-radius: 30px;
-  border-color: #d47e37;
-  background-color: #d47e37;
+  border-color: #d45f37;
+  background-color: #d45f37;
   box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 2px 0px;
   margin-left: 5px;
   margin-bottom: 30px;
@@ -61,7 +61,7 @@ h2 {
 }
 
 .static-text {
-  color: rgba(0, 0, 0, 0.5);
+  color: #d45f37;
   font-weight: 600;
 }
 
@@ -102,10 +102,11 @@ li strong {
   top: -20px;
 }
 .main-icon {
-  width: 120px;
+  width: 140px;
   height: auto;
   display: block;
   margin: auto;
+  padding: 20px;
 }
 
 .weather-parameter {
@@ -135,6 +136,10 @@ li strong {
 .forecast-temp-min {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.forecast-indiv img {
+  padding: 10px;
 }
 
 p {

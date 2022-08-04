@@ -70,7 +70,7 @@ function showSearchCityResult(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `src/image/weather-icon-custom/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
@@ -146,11 +146,11 @@ function displayForecast(response) {
         <div class="forecast-indiv">
           <h5 class="forecast-day">${formatDay(forecastDay.dt)}</h5>
           <img
-            src="https://openweathermap.org/img/wn/${
+            src="src/image/weather-icon-custom/${
               forecastDay.weather[0].icon
-            }@2x.png"
+            }.png"
             alt="${forecastDay.weather[0].description}"
-            width="70%"
+            width="80px"
           />
           <h5 class="forecast-temp">
             <span class="forecast-temp-max">${Math.round(
