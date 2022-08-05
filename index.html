@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Neuton:ital,wght@0,200;0,300;0,400;1,400&family=Ultra&display=swap"
       rel="stylesheet"
     />
+
+    <script
+      src="https://kit.fontawesome.com/1b1dd309e5.js"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla Weather App</title>
@@ -29,7 +35,7 @@
 
         <form>
           <div class="row">
-            <div class="col-9">
+            <div class="col-8">
               <div class="form-group">
                 <input
                   type="search"
@@ -40,12 +46,19 @@
                 />
               </div>
             </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary search-button">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>Search
+              </button>
+            </div>
+            <div class="col-2">
+              <button
+                type="button"
                 class="btn btn-primary search-button"
-              />
+                id="current-location"
+              >
+                <i class="fa-solid fa-location-dot location-icon"></i>
+              </button>
             </div>
           </div>
         </form>

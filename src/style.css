@@ -48,7 +48,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .search-button {
-  border-radius: 30px;
+  border-radius: 40px;
   border-color: #d45f37;
   background-color: #d45f37;
   box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 2px 0px;
@@ -59,7 +59,21 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .search-button:hover {
-  background-color: #3795d4;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.search-icon {
+  color: white;
+  font-size: 20px;
+  padding: 0 5px;
+  display: inline;
+}
+.location-icon {
+  color: white;
+  font-size: 20px;
+  padding: 0 5px;
+  display: inline;
 }
 
 h2 {
