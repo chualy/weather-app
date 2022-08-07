@@ -1,26 +1,7 @@
 function formatDate(timestamp) {
   let now = new Date(timestamp);
 
-  let hours = now.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[now.getDay()];
+  let dayOfMonth = now.getDate();
 
   let months = [
     "January",
@@ -38,8 +19,29 @@ function formatDate(timestamp) {
   ];
 
   let month = months[now.getMonth()];
-  let dayOfMonth = now.getDate();
+
   let year = now.getFullYear();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   return `${dayOfMonth} ${month} ${year}, ${day} <br> ${hours}:${minutes}`;
 }
