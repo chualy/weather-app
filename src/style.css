@@ -197,13 +197,3 @@ p {
   color: white;
   text-decoration: underline;
 }
-
-.active {
-  color: black;
-  cursor: default;
-}
-
-.active:hover {
-  color: black;
-  text-decoration: none;
-}
