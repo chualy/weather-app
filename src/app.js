@@ -77,6 +77,7 @@ function showSearchCityResult(response) {
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
   celsiusTemp = response.data.main.temp;
+  feelsLikeCelsiusTemp = response.data.main.feels_like;
 
   getForecast(response.data.coord);
 }
@@ -125,19 +126,24 @@ function getCurrentLocation(position) {
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
-  let tempElement = document.querySelector("#temp-number");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let currentTempElement = document.querySelector("#temp-number");
+  let FeelsLikeTempElement = document.querySelector("#feelslike-temp-number");
+  let currentFahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let feelsLikeFahrenheitTemp = (feelsLikeCelsiusTemp * 9) / 5 + 32;
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
+  currentTempElement.innerHTML = Math.round(currentFahrenheitTemp);
+  FeelsLikeTempElement.innerHTML = Math.round(feelsLikeFahrenheitTemp);
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
-  let tempElement = document.querySelector("#temp-number");
+  let currentTempElement = document.querySelector("#temp-number");
+  let FeelsLikeTempElement = document.querySelector("#feelslike-temp-number");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  tempElement.innerHTML = Math.round(celsiusTemp);
+  currentTempElement.innerHTML = Math.round(celsiusTemp);
+  FeelsLikeTempElement.innerHTML = Math.round(feelsLikeCelsiusTemp);
 }
 
 function formatDay(timestamp) {
