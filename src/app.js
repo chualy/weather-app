@@ -76,9 +76,6 @@ function showSearchCityResult(response) {
   );
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
-  celsiusTemp = response.data.main.temp;
-  feelsLikeCelsiusTemp = response.data.main.feels_like;
-
   getForecast(response.data.coord);
 }
 
@@ -98,8 +95,6 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(showSearchCityResult);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
 }
 
 function handleSubmit(event) {
@@ -122,28 +117,6 @@ function getCurrentLocation(position) {
   console.log(apiUrl);
 
   axios.get(apiUrl).then(showSearchCityResult);
-}
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let currentTempElement = document.querySelector("#temp-number");
-  let FeelsLikeTempElement = document.querySelector("#feelslike-temp-number");
-  let currentFahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let feelsLikeFahrenheitTemp = (feelsLikeCelsiusTemp * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  currentTempElement.innerHTML = Math.round(currentFahrenheitTemp);
-  FeelsLikeTempElement.innerHTML = Math.round(feelsLikeFahrenheitTemp);
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let currentTempElement = document.querySelector("#temp-number");
-  let FeelsLikeTempElement = document.querySelector("#feelslike-temp-number");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  currentTempElement.innerHTML = Math.round(celsiusTemp);
-  FeelsLikeTempElement.innerHTML = Math.round(feelsLikeCelsiusTemp);
 }
 
 function formatDay(timestamp) {
@@ -199,13 +172,5 @@ form.addEventListener("submit", handleSubmit);
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", changeCurrentLocation);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
-
-let celsiusTemp = null;
 
 search("Singapore");

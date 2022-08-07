@@ -129,16 +129,19 @@ li strong {
   font-size: 64px;
 }
 
-.temp-unit {
-  position: relative;
-  top: -20px;
-}
 .main-icon {
   width: 140px;
   height: auto;
   display: block;
   margin: auto;
   padding: 20px;
+}
+
+.temp-unit {
+  position: relative;
+  top: -25px;
+  right: -20px;
+  font-size: larger;
 }
 
 .feelslike-temp {
@@ -181,6 +184,7 @@ p {
   color: white;
   display: block;
   text-align: center;
+  font-size: smaller;
 }
 
 .link {
