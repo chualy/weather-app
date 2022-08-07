@@ -105,6 +105,22 @@ function handleSubmit(event) {
   search(searchInput.value);
 }
 
+function changeCurrentLocation(action) {
+  navigator.geolocation.getCurrentPosition(getCurrentLocation);
+}
+
+function getCurrentLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "166b9c0e1c83778d358b7f11ac37349b";
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${unit}&appid=${apiKey}`;
+
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(showSearchCityResult);
+}
+
 function showFahrenheitTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp-number");
@@ -172,6 +188,9 @@ function displayForecast(response) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", changeCurrentLocation);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemp);
